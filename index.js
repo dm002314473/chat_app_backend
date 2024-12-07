@@ -12,6 +12,7 @@ const io = new Server(server, {
     origin: process.env.FRONTEND_URL || "http://localhost:3000",
     methods: ["GET", "POST"],
   },
+  transports: ["websocket", "polling"],
 });
 
 io.on("connection", (socket) => {
